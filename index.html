@@ -6,7 +6,7 @@
   <link rel="icon" type="image/svg+xml" href="favicon.ico" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CODEBot - Your Personal AI</title>
+  <title>باهوش - اولین سرویس رایگان هوش مصنوعی</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -14,16 +14,16 @@
   <div id="app">
     <div class="header">
       <img src="favicon.ico" alt="logo" />
-      <h1 style="color:rgb(211, 64, 11);">CODEBot - Your Personal AI</h1>
-      <i class='fa fa-github' style='font-size:20px;color: rgb(226, 75, 190)'>&nbsp;<a style="color:rgb(120, 161, 202)" href="https://github.com/Divyansh6799">Made by Divyansh Trivedi</a></i>
+      <h1 style="color:rgb(211, 64, 11);">باهوش - اولین سرویس رایگان هوش مصنوعی</h1>
+      <i class='fa fa-github' style='font-size:20px;color: rgb(226, 75, 190)'>&nbsp;<a style="color:rgb(120, 161, 202)" href="https://github.com/bugbounted">Made With 🧠 by Mohamad Samardeh Haghighi Fard</a></i>
     </div>
     <div id="chat_container"></div>
     <form>
-      <textarea name="prompt" id="txt" rows="1" cols="1" placeholder="Ask codebot..."></textarea>
+      <textarea name="prompt" id="txt" rows="1" cols="1" placeholder="ازش بپرس"></textarea>
       <button type="submit" id="send"><img src="assets/send.svg" alt="send" />
     </form>
     <div class="microphone">
-      <button id="mic" style="position:relative;top:-20px;font-size:25px;color:rgb(230, 123, 22)">Tap To Speak<i id="mes" class="fa fa-microphone" style="font-size:25px;color:red"></i></button>
+      <button id="mic" style="position:relative;top:-20px;font-size:25px;color:rgb(230, 123, 22)">تاچ کنید و همزمان صحبت کنید<i id="mes" class="fa fa-microphone" style="font-size:25px;color:red"></i></button>
     </div>
   </div>
   <script>
@@ -34,7 +34,7 @@
     speak.addEventListener('click', function () {
       textarea.innerHTML='';
       recognition.start();
-      document.getElementById("mic").innerHTML = "Voice Recognition is ON"
+      document.getElementById("mic").innerHTML = "تشخیص صدا روشن است"
     })
     recognition.onresult = function (e) {
       var transcript = e.results[0][0].transcript;
@@ -45,11 +45,11 @@
       recognition.stop();
       document.getElementById("txt").focus();
       document.getElementById("send").click();
-      document.getElementById("mic").innerHTML = "Tap To Speak"
+      document.getElementById("mic").innerHTML = "تاچ کنید و همزمان صحبت کنید"
       document.getElementById("mic").insertAdjacentHTML('beforeEnd', '<i class="fa fa-microphone" style="font-size:25px;color:red"></i>');
     };   
     recognition.onerror = function () {
-      document.getElementById("mic").innerHTML = "Error Occured! Tap To Speak Again"
+      document.getElementById("mic").innerHTML = "بروز خطا ، مجدد تلاش کنید"
       document.getElementById("mic").insertAdjacentHTML('beforeEnd', '<i class="fa fa-microphone" style="font-size:25px;color:red"></i>');
     }
   </script>
