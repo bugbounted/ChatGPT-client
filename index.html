@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="favicon.ico" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>زیرک - اولین سرویس رایگان هوش مصنوعی</title>
   <link rel="stylesheet" href="style.css" />
@@ -15,7 +15,7 @@
     <div class="header">
       <img src="favicon.ico" alt="logo" />
       <h1 style="color:rgb(211, 64, 11);">زیرک - اولین سرویس رایگان هوش مصنوعی</h1>
-      <i class='fa fa-github' style='font-size:20px;color: rgb(226, 75, 190)'>&nbsp;<a style="color:rgb(120, 161, 202)" href="https://github.com/bugbounted">Made With 🧠 by Mohamad Samardeh Haghighi Fard</a></i>
+      <i class='fa fa-github' style='font-size:17px;color: rgb(226, 75, 190)'>&nbsp;<a style="color:rgb(120, 161, 202)" href="https://github.com/bugbounted">Made With 🧠 by Mohamad Samardeh Haghighi Fard</a></i>
     </div>
     <div id="chat_container"></div>
     <form>
@@ -23,7 +23,7 @@
       <button type="submit" id="send"><img src="assets/send.svg" alt="send" />
     </form>
     <div class="microphone">
-      <button id="mic" style="position:relative;top:-20px;font-size:25px;color:rgb(230, 123, 22)">تاچ کنید و همزمان صحبت کنید<i id="mes" class="fa fa-microphone" style="font-size:25px;color:red"></i></button>
+      <button id="mic" style="position:relative;top:-20px;font-size:20px;color:rgb(230, 123, 22)">تاچ کنید و همزمان صحبت کنید<i id="mes" class="fa fa-microphone" style="font-size:25px;color:red"></i></button>
     </div>
   </div>
   <script>
@@ -46,11 +46,11 @@
       document.getElementById("txt").focus();
       document.getElementById("send").click();
       document.getElementById("mic").innerHTML = "تاچ کنید و همزمان صحبت کنید"
-      document.getElementById("mic").insertAdjacentHTML('beforeEnd', '<i class="fa fa-microphone" style="font-size:25px;color:red"></i>');
+      document.getElementById("mic").insertAdjacentHTML('beforeEnd', '<i class="fa fa-microphone" style="font-size:20px;color:red"></i>');
     };   
     recognition.onerror = function () {
       document.getElementById("mic").innerHTML = "بروز خطا ، مجدد تلاش کنید"
-      document.getElementById("mic").insertAdjacentHTML('beforeEnd', '<i class="fa fa-microphone" style="font-size:25px;color:red"></i>');
+      document.getElementById("mic").insertAdjacentHTML('beforeEnd', '<i class="fa fa-microphone" style="font-size:20px;color:red"></i>');
     }
   </script>
   <script type="module" src="script.js"></script>
