@@ -136,12 +136,15 @@ body {
   scroll-behavior: smooth;
   overflow-x: scroll;
   overflow-y: scroll;
-  
+  text-align: start;
+  unicode-bidi: plaintext;
 }
 
 /* hides scrollbar */
 #chat_container::-webkit-scrollbar {
   display: none;
+  text-align: start;
+  unicode-bidi: plaintext;
 }
 
 .wrapper {
@@ -161,6 +164,8 @@ body {
   flex-direction: row;
   align-items: flex-start;
   gap: 10px;
+  text-align: start;
+  unicode-bidi: plaintext;
   
 }
 
