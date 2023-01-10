@@ -156,10 +156,6 @@ body {
   padding: 15px;
 }
 
-.ai {
-  background: #387e60;
-}
-
 .chat {
   width: 100%;
   max-width: 1280px;
@@ -182,6 +178,11 @@ body {
   justify-content: center;
   align-items: center;
   
+}
+
+.ai .profile {
+  background: #10a37f;
+
 }
 
 .profile img {
