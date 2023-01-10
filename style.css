@@ -103,7 +103,6 @@
 }
 
 body {
-  background: #81e5fb;
   margin: 0;
   overscroll-behavior: none;
   overflow-y: auto;
@@ -111,6 +110,11 @@ body {
   min-height: 5px;
   inline-size: 150px;
   overflow-wrap: break-word;
+  background: url('./bg.webp') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 #app {
