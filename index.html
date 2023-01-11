@@ -5,13 +5,37 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="favicon.ico" />
   <script src="jquery.js"></script>
-  <script>
-  document.querySelectorAll('div[id^="id-"]').forEach(function(el) {
-    el.addEventListener('click', function() {
-      navigator.clipboard.writeText(this.innerText);
-    });
-  });
-  </script>
+<script>
+  function copyTextToClipboard(id) {
+    var text = document.getElementById(id).innerText;
+
+    if (window.clipboardData && window.clipboardData.setData) {
+      // IE specific code path to prevent textarea being shown while dialog is visible.
+      return clipboardData.setData("Text", text); 
+
+    } else if (document.queryCommandSupported && document.queryCommandSupported("copy")) {
+      var textarea = document.createElement("textarea");
+      textarea.textContent = text;
+      textarea.style.position = "fixed";  // Prevent scrolling to bottom of page in MS Edge.
+
+      document.body.appendChild(textarea);
+
+      textarea.select();
+
+      try {
+        return document.execCommand("copy");  // Security exception may be thrown by some browsers.
+      } catch (ex) {
+        console.warn("Copy to clipboard failed.", ex);
+
+        return false;
+      } finally {
+        document.body.removeChild(textarea);
+      }
+
+    } else { console.log('Your browser does not support the copy command.'); }  										  
+
+  }  				  	  	  	  	  	  	  	  	    
+</script>
   <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>زیرک - اولین سرویس رایگان هوش مصنوعی</title>
@@ -25,7 +49,11 @@
       <h1 style="color:rgb(211, 64, 11);">زیرک - اولین سرویس رایگان هوش مصنوعی</h1>
       <i class='fa fa-github' style='font-size:15px;color: rgb(226, 75, 190)'>&nbsp;<a style="color:rgb(120, 161, 202)" href="https://github.com/bugbounted">Made With 🧠 by Mohamad Samardeh</a></i>
     </div>
-    <div id="chat_container"></div>
+    <div id="chat_container">
+    <div onclick="copyTextToClipboard('chat_container')">
+      Text to copy
+    </div>
+    </div>
     <form>
       <textarea name="prompt" id="txt" rows="1" cols="1" placeholder="ازش بپرس"></textarea>
       <button type="submit" id="send"><img src="assets/send.svg" alt="send" />
