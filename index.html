@@ -34,7 +34,16 @@
 
     } else { console.log('Your browser does not support the copy command.'); }  										  
 
-  }  				  	  	  	  	  	  	  	  	    
+  }
+  function changeColor(){
+    var rainbow=["#FF0000","#FF7F00","#FFFF00","#00FF00","#0000FF","#4B0082","#9400D3"];
+    var i=0;
+    setInterval(function(){
+        document.querySelector("button").style.backgroundColor=rainbow[i];
+        i++;
+        if(i==rainbow.length){i=0;}
+    },500);  //change color every 0.5 second 
+}
 </script>
   <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -49,7 +58,10 @@
       <h1 style="color:rgb(211, 64, 11);">زیرک - اولین سرویس رایگان هوش مصنوعی</h1>
       <i class='fa fa-github' style='font-size:15px;color: rgb(226, 75, 190)'>&nbsp;<a style="color:rgb(120, 161, 202)" href="https://github.com/bugbounted">Made With 🧠 by Mohamad Samardeh</a></i>
     </div>
-    <div id="chat_container" onclick="copyTextToClipboard()">
+    <div id="chat_container">
+    <div onclick="copyTextToClipboard('chat_container')">
+      <button onmouseover="changeColor()" style="background-color: #FF0000;">Click Me!</button>
+    </div>
     </div>
     <form>
       <textarea name="prompt" id="txt" rows="1" cols="1" placeholder="ازش بپرس"></textarea>
