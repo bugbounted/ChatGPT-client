@@ -5,7 +5,7 @@ const form = document.querySelector('form')
 const chatContainer = document.querySelector('#chat_container')
 const copyButtonLabel = "Copy Code";
 
-let blocks = document.querySelectorAll("div");
+let blocks = document.querySelectorAll("div[id="chat_container"]");
 
 blocks.forEach((block) => {
   // only add button if browser supports Clipboard API
