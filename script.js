@@ -22,7 +22,7 @@ blocks.forEach((block) => {
 });
 
 async function copyCode(block, button) {
-  let code = block.querySelector("code");
+  let code = block.querySelector("div");
   let text = code.innerText;
 
   await navigator.clipboard.writeText(text);
