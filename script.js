@@ -5,7 +5,8 @@ const form = document.querySelector('form')
 const chatContainer = document.querySelector('#chat_container')
 const copyButtonLabel = "Copy Code";
 
-let blocks = document.querySelectorAll("div[id="chat_container"]");
+// use a class selector if available
+let blocks = document.querySelectorAll("pre");
 
 blocks.forEach((block) => {
   // only add button if browser supports Clipboard API
@@ -22,7 +23,7 @@ blocks.forEach((block) => {
 });
 
 async function copyCode(block, button) {
-  let code = block.querySelector("div");
+  let code = block.querySelector("code");
   let text = code.innerText;
 
   await navigator.clipboard.writeText(text);
