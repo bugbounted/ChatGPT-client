@@ -6,7 +6,7 @@ const chatContainer = document.querySelector('#chat_container')
 const copyButtonLabel = "Copy Code";
 
 // use a class selector if available
-let blocks = document.querySelectorAll("pre");
+let blocks = document.querySelectorAll("div[id^="id-"]");
 
 blocks.forEach((block) => {
   // only add button if browser supports Clipboard API
