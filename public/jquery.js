@@ -1,11 +1,12 @@
-$(function () {
-    $(".chat_container").hide();
-    $(".text-copy").click(function () {
-        var $temp = $("<input>");
-        $("body").append($temp);
-        $temp.val($(this).closest("app").find("chat_container").find(".wrapper ai").find(".chat").find(".message").text()).select();
-        document.execCommand('copy');
-        $(".chat_container").text("Copied!").show().fadeOut(1200);
-        $temp.remove();
-    });
+ $("div[id^='id-']").click(function(){
+  var text = $(this).text();
+  copyToClipboard(text);
 });
+
+function copyToClipboard(text) {
+  var $temp = $("<input>");
+  $("body").append($temp);
+  $temp.val(text).select();
+  document.execCommand("copy");
+  $temp.remove();
+}
