@@ -76,7 +76,7 @@
   box-sizing: border-box;
 }
 
-pre {
+div[id^="id-"] {
   position: relative;
   overflow: auto;
 
@@ -86,7 +86,7 @@ pre {
   border-radius: 10px;
 }
 
-pre button {
+div[id^="id-"] button {
   position: absolute;
   top: 5px;
   right: 5px;
@@ -100,7 +100,7 @@ pre button {
   text-shadow: #c4c4c4 0 0 2px;
 }
 
-pre button:hover {
+div[id^="id-"] button:hover {
   cursor: pointer;
   background-color: #bcbabb;
 }
